@@ -13,8 +13,10 @@ stdIn.subscribe((key) => {
     }
 });
 
-stdIn.subscribe((key) => {
-    renderOutput(key);
+stdIn.scan((acc,key)=>{
+    return acc+1;
+},0).subscribe((output) => {
+    renderOutput(output);
 });
 
 

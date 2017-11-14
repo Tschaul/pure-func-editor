@@ -1,4 +1,4 @@
-const { Observable } = require('rxjs');
+const { Observable } = require('rxjs/Rx');
 
 function fromStream(stream, finishEventName = 'end', dataEventName = 'data') {
   //stream.pause();
