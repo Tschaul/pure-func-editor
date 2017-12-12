@@ -1,18 +1,14 @@
 const assert = require('assert');
 const detectCharType = require('./detectCharType');
 
-const printableSamples = ['a','b','z','A','B','Z','0','1','9','!','&','?'];
-
-printableSamples.forEach(sample => {
+['a','b','z','A','B','Z','0','1','9','!','&','?'].forEach(sample => {
     assert(
         detectCharType.detect(sample) === detectCharType.PRINTABLE_ASCII,
         `Character '${sample}' should be PRINTABLE_ASCII`
     )
 })
 
-const nonprintableSamples = ['ö','ß','\u0003', String.fromCharCode(31)];
-
-nonprintableSamples.forEach(sample => {
+['ö','ß','\u0003', String.fromCharCode(31)].forEach(sample => {
     assert(
         detectCharType.detect(sample) === detectCharType.OTHER,
         `Character '${sample}' should be OTHER`
